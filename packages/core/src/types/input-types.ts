@@ -14,6 +14,7 @@ import EventApi from '../api/EventApi'
 import { AllowFunc, ConstraintInput, OverlapFunc } from '../validation'
 import { PluginDef } from '../plugin-system'
 import { LocaleSingularArg, RawLocale } from '../datelib/locale'
+import { TransformEventInstanceMutationHandler, TransformEventDefMutationHandler } from '../Calendar'
 
 
 export interface ToolbarInput {
@@ -94,6 +95,8 @@ export interface OptionsInputBase {
   customButtons?: { [name: string]: CustomButtonInput }
   buttonIcons?: boolean | ButtonIconsInput
   themeSystem?: 'standard' | string
+  transformEventInstanceMutation?: TransformEventInstanceMutationHandler
+  transformEventDefMutation?: TransformEventDefMutationHandler
   bootstrapFontAwesome?: boolean | ButtonIconsInput
   firstDay?: number
   dir?: 'ltr' | 'rtl' | 'auto'
